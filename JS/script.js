@@ -112,9 +112,8 @@ $(document).ready(function () {
             dataType:"json",
             success: function(data){
                 console.log(data);
-                console.log(data.query.pages[Object.keys(data.query.pages)].length);
-                for (var i = 0; i < data.query.pages.length; i++) {
-                    searchterm = data.query.pages[Object.keys(data.query.pages)[0]].title;
+                for (var i = 0; i < Object.keys(data.query.pages).length; i++) {
+                    searchterm = data.query.pages[Object.keys(data.query.pages)[i]].title;
                     openSearch();
                 }
             },
